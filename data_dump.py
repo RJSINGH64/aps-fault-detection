@@ -3,7 +3,7 @@ import pandas
 import json
 #connecting to a MongoDB Atlas using url
 
-client = pymongo.MongoClient("mongodb+srv://rajatksingh64:ROCKINGRJ12345@cluster0.owfzau8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+client = pymongo.MongoClient("mongodb+srv://rajatksingh64:rjsingh@ineuron@cluster0.owfzau8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
 database_name="aps"
 file_path=r"D:\Downloaded files\aps_failure_training_set1.csv"
@@ -20,3 +20,4 @@ if __name__=="__main__":
    #inserting  data into a mongo db
   # client[database_name][collection_name].insert_many(json_records)
    print("records inerted properly into a mongo db")
+con
