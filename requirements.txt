@@ -1,4 +1,4 @@
-pymongo
+pymongo==4.2.0
 pandas
 numpy
 matplotlib
