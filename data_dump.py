@@ -1,9 +1,8 @@
 import pymongo
 import pandas
 import json
+from sensor.config import mongo_client
 #connecting to a MongoDB Atlas using url
-
-#client = pymongo.MongoClient("mongodb+srv://rajatksingh64:<passwordpls>@cluster0.owfzau8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
 database_name="aps"
 file_path=r"D:\Downloaded files\aps_failure_training_set1.csv"
@@ -18,5 +17,5 @@ if __name__=="__main__":
    json_records= list(json.loads(df.T.to_json()).values())
    print(json_records[0])
    #inserting  data into a mongo db
-  # client[database_name][collection_name].insert_many(json_records)
-   #print("records inerted properly into a mongo db")
+   mongo_client[database_name][collection_name].insert_many(json_records)
+   
