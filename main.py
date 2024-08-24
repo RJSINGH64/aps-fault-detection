@@ -6,11 +6,11 @@ from sensor.entity.config_entity import DataIngestionConfig , TrainingPipelineCo
 from sensor.components.data_ingestion import DataIngestion
 if __name__=="__main__":
     try :
-        training_pipe_config = TrainingPipelineConfig()
+        training_pipe_config = TrainingPipelineConfig()      # saving dataset inside artifact folder 
         data_ingestion_config = DataIngestionConfig(training_pipe_config)
         print(data_ingestion_config.to_dict()) 
         data_ingestion = DataIngestion(data_ingestion_config=data_ingestion_config)
         print(data_ingestion.initiate_data_ingestion())
-
+        print("\n Data Ingestion initiated Sucessfully")
     except Exception as e:
         print(e)
