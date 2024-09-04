@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+
 @dataclass
 class DataIngestionArtifact:
 
@@ -6,19 +7,23 @@ class DataIngestionArtifact:
      train_file_path :str
      test_file_path :str
 
-
+@dataclass
 class DataValidationArtifact:
+   report_file_path:str
      
-     def __init__(self , report_file_path:str):
-     
-         self.report_file_path=report_file_path
-     
-
+@dataclass
 class DataTransformationArtifact:
-   pass
+   transform_object_path:str
+   transformed_train_path:str
+   transformed_test_path:str
+   target_encoder_path:str
 
+@dataclass
 class ModelTrainerArtifact:
-   pass
+   model_path:str
+   f1_train_score:float
+   f1_test_score:float
+   
  
 class ModelEvaluationArtifact:
 

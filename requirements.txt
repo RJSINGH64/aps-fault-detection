@@ -21,4 +21,6 @@ apache-airflow
 catboost
 seaborn 
 matplotlib
+imblearn
+-e .
 

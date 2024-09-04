@@ -5,6 +5,7 @@ from sensor.exception import SensorException
 import os , sys
 import yaml
 import numpy as np
+import dill  #for saving object 
 
 #loading data_frame from mongo db using url 
 
