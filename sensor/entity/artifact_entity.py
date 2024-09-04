@@ -8,7 +8,11 @@ class DataIngestionArtifact:
 
 
 class DataValidationArtifact:
-   pass
+     
+     def __init__(self , report_file_path:str):
+     
+         self.report_file_path=report_file_path
+     
 
 class DataTransformationArtifact:
    pass
