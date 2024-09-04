@@ -24,9 +24,11 @@ class ModelTrainerArtifact:
    f1_train_score:float
    f1_test_score:float
    
- 
+@dataclass
 class ModelEvaluationArtifact:
+    is_model_accepted:bool
+    improved_accuracy:float
 
-   pass
+
 class ModelPusherArtifact:
    pass
