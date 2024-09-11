@@ -21,7 +21,7 @@ def get_requirements()->list[str]:
 setup (
 
     name = "sensor" , 
-    version = "0.0.1" , 
+    version = "0.0.2" , 
     author= "iNeuron.ai" , 
     author_email="rajat.k.singh64@gmail.com" , 
     packages=  find_packages() , 
