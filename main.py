@@ -7,7 +7,7 @@ from sensor.components.data_ingestion import DataIngestion
 from sensor.components.data_validation import DataValidation
 from sensor.components.data_transformation import DataTransformation
 from sensor.components.model_trainer import ModelTrainer
-from sensor.components.model_evalution import ModelEvaluation
+from sensor.components.model_evaluation import ModelEvaluation
 from sensor.components.model_pusher import ModelPusher
 
 
@@ -40,13 +40,13 @@ if __name__=="__main__":
         #model evaluation
 
         model_eva_config = ModelEvaluationConfig(training_pipeline_config=training_pipe_config)
-        model_evalution = ModelEvaluation(model_eval_config=model_eva_config ,
+        model_evaluation = ModelEvaluation(model_eval_config=model_eva_config ,
                                           data_ingestion_artifact=data_ingestion_artifact,
                                           data_transformation_artifact=data_transformation_artifact , 
                                           model_trainer_artifact=model_trainer_artifact
                                           )
                                           
-        model_evaluation_artifact = model_evalution.initiate_model_evaluation()    
+        model_evaluation_artifact = model_evaluation.initiate_model_evaluation()    
         print(">"*10 , " 5th Pipeline Model Evalution Initiated Sucessfully" , "<"*10)                             
        
         #model pusher
