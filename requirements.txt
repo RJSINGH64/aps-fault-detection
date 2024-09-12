@@ -18,9 +18,4 @@ PyYAML
 numpy
 scikit-learn
 apache-airflow
-catboost
-seaborn 
-matplotlib
-imblearn
 -e .
-
