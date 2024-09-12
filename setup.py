@@ -1,30 +1,28 @@
-from setuptools import find_packages , setup 
+from setuptools import find_packages,setup
 
-requirements_file = "requirements.txt"
-hyphen_e_dot = "-e ."
+from typing import List
 
-def get_requirements()->list[str]:
-   with open (requirements_file) as requirement_file :
-      requirement_list = requirement_file.readlines()
-      requirement_list = [requirements_name.replace("\n" , "") for requirements_name in requirement_list]
-      
-   if hyphen_e_dot in requirement_list :
-       requirement_list.remove(hyphen_e_dot)
-   return requirement_list
-     
+REQUIREMENT_FILE_NAME="requirements.txt"
+HYPHEN_E_DOT = "-e ."
+
+def get_requirements()->List[str]:
     
+    with open(REQUIREMENT_FILE_NAME) as requirement_file:
+        requirement_list = requirement_file.readlines()
+    requirement_list = [requirement_name.replace("\n", "") for requirement_name in requirement_list]
+    
+    if HYPHEN_E_DOT in requirement_list:
+        requirement_list.remove(HYPHEN_E_DOT)
+    return requirement_list
 
 
 
-
-
-setup (
-
-    name = "sensor" , 
-    version = "0.0.2" , 
-    author= "iNeuron.ai" , 
-    author_email="rajat.k.singh64@gmail.com" , 
-    packages=  find_packages() , 
-    install_requires = get_requirements() , 
-
+setup(
+    name="sensor",
+    version="0.0.2",
+    author="ineuron",
+    author_email="rajat.k.singh64@gmail.com",
+    packages = find_packages(),
+    install_requires=get_requirements(),
 )
+
