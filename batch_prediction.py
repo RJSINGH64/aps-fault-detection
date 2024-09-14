@@ -7,7 +7,7 @@ if __name__=="__main__":
         
         Batch_output=start_batch_prediction(input_file_path=file_path)
         print(">"*15," Current Prediction is " , ">"*15)
-        print(Batch_output)
+        print(">"*15,Batch_output,"<"*15)
     
     except Exception as e:
         raise SensorException(e , sys)
