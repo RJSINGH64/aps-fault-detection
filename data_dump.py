@@ -1,29 +1,21 @@
 import pymongo
-import pandas as pd
+import pandas
 import json
-
 from sensor.config import mongo_client
+#connecting to a MongoDB Atlas using url
 
-DATA_FILE_PATH=r"E:\PYTHON PROJECTS\V-S Code Projects\app_fault_detection\aps_failure_training_set1.csv"
-DATABASE_NAME="aps"
-COLLECTION_NAME="sensor"
+database_name="aps"
+file_path=r"E:\PYTHON PROJECTS\V-S Code Projects\app_fault_detection\aps_failure_training_set1.csv"
+collection_name="sensor"
 
 if __name__=="__main__":
-    df = pd.read_csv(DATA_FILE_PATH)
-    print(f"Rows and columns: {df.shape}")
+   df=pandas.read_csv(file_path)
+   print(f"Rows and Columns : {df.shape}")
 
-    #Convert dataframe to json so that we can dump these record in mongo db
-    df.reset_index(drop=True,inplace=True)
-
-    json_record = list(json.loads(df.T.to_json()).values())
-    print(json_record[0])
-    #insert converted json record to mongo db
-    mongo_client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_record)
-
-
-
-
-
-
-
-
+   #converting dataframe into a json format ,  so we can dump it into a MongoDB
+   df.reset_index(drop=True , inplace=True)
+   json_records= list(json.loads(df.T.to_json()).values())
+   print(json_records[0])
+   #inserting  data into a mongo db
+   mongo_client[database_name][collection_name].insert_many(json_records)
+   
