@@ -4,10 +4,7 @@ from glob import glob
 from typing import Optional
 import os
 
-
 class ModelResolver:
-
-    
     
     def __init__(self,model_registry:str = "saved_models",
                 transformer_dir_name="transformer",
@@ -97,9 +94,4 @@ class ModelResolver:
 
 
 
-
-class Predictor:
-
-    def __init__(self,model_resolver:ModelResolver):
-        self.model_resolver=model_resolver
 

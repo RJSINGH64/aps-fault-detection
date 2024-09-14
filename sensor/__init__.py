@@ -1,3 +1,3 @@
 from dotenv import load_dotenv
-print(f"loading .env file ")
+print(f"Loading environment variable from .env file")
 load_dotenv()
